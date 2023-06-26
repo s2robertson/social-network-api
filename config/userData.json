@@ -1,10 +1,16 @@
 [{
+    "_id": "649a012ca2baa7727c51c2ab",
     "username": "john.doe",
-    "email": "john.doe@example.com"
+    "email": "john.doe@example.com",
+    "friends": ["649a012ca2baa7727c51c2ac", "649a012ca2baa7727c51c2ad"]
 }, {
+    "_id": "649a012ca2baa7727c51c2ac",
     "username": "fred.griffon",
-    "email": "fgriffon@example.com"
+    "email": "fgriffon@example.com",
+    "friends": ["649a012ca2baa7727c51c2ab"]
 }, {
+    "_id": "649a012ca2baa7727c51c2ad",
     "username": "greg.smith",
-    "email": "gsmith@example.com"
+    "email": "gsmith@example.com",
+    "friends": ["649a012ca2baa7727c51c2ab"]
 }]
