@@ -1,4 +1,29 @@
-const { Schema } = require('mongoose');
+const { Schema, Types } = require('mongoose');
+
+const reactionSchema = new Schema({
+    reactionId: {
+        type: Schema.Types.ObjectId,
+        default: () => new Types.ObjectId()
+    },
+    reactionBody: {
+        type: String,
+        required: [true, 'reactionBody is required'],
+        maxLength: [280, 'reactionBody must be between 1 and 280 characters']
+    },
+    username: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+        get(val) {
+            return val.toLocaleString();
+        }
+    }
+}, {
+    _id: false
+});
 
 const thoughtSchema = new Schema({
     thoughtText: {
@@ -17,7 +42,8 @@ const thoughtSchema = new Schema({
     username: {
         type: String,
         required: true
-    }
+    },
+    reactions: [reactionSchema]
 }, {
     toJSON: {
         versionKey: false

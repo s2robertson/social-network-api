@@ -33,5 +33,11 @@ module.exports = {
                 { $pull: { thoughts: thought.id } });
         }
         return thought;
+    },
+
+    addReaction(thoughtId, reactionData) {
+        return Thought.findByIdAndUpdate(thoughtId, 
+            { $addToSet: { reactions: reactionData } },
+            { new: true });
     }
 }

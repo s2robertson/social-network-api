@@ -1,25 +1,52 @@
 [{
     "_id": "649a4847359cd8193449d7da",
     "thoughtText": "egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris",
-    "username": "john.doe"
+    "username": "john.doe",
+    "reactions": [{
+        "reactionBody": "nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus",
+        "username": "fred.griffon"
+    }]
 }, {
     "_id": "649a4847359cd8193449d7db",
     "thoughtText": "varius duis at consectetur lorem donec massa sapien faucibus et molestie ac feugiat sed lectus",
-    "username": "john.doe"
+    "username": "john.doe",
+    "reactions": [{
+        "reactionBody": "risus viverra adipiscing at in tellus integer feugiat scelerisque varius",
+        "username": "greg.smith"
+    }]
 }, {
     "_id": "649a4847359cd8193449d7dc",
     "thoughtText": "donec massa sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed",
-    "username": "fred.griffon"
+    "username": "fred.griffon",
+    "reactions": [{
+        "reactionBody": "faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget",
+        "username": "john.doe"
+    }]
 }, {
     "_id": "649a4847359cd8193449d7dd",
     "thoughtText": "volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis",
-    "username": "fred.griffon"
+    "username": "fred.griffon",
+    "reactions": [{
+        "reactionBody": "congue quisque egestas diam in arcu cursus euismod quis viverra",
+        "username": "john.doe"
+    }, {
+        "reactionBody": "mi sit amet mauris commodo quis imperdiet massa tincidunt nunc",
+        "username": "greg.smith"
+    }]
 }, {
     "_id": "649a4847359cd8193449d7de",
     "thoughtText": "egestas maecenas pharetra convallis posuere morbi leo urna molestie at elementum eu facilisis sed odio",
-    "username": "greg.smith"
+    "username": "greg.smith",
+    "reactions": [{
+        "reactionBody": "dignissim convallis aenean et tortor at risus viverra adipiscing at",
+        "username": "john.doe"
+    }]
 }, {
     "_id": "649a4847359cd8193449d7df",
     "thoughtText": "fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque",
-    "username": "greg.smith"
+    "username": "greg.smith",
+    "reactions": [{
+        "reactionBody": "amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien",
+        "username": "fred.griffon"
+    }]
 }]
