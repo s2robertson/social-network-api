@@ -11,7 +11,7 @@ router.route('/')
         res.json(users);
     } catch (err) {
         console.log(err);
-        res.status(500).json({ message: 'Something went wrong!' });
+        res.status(500).json({ message: getErrorMessage(err) });
     }
 })
 .post(async (req, res) => {
@@ -35,7 +35,7 @@ router.route('/:id')
         }
     } catch (err) {
         console.log(err);
-        res.status(500).json({ message: 'Something went wrong!' });
+        res.status(500).json({ message: getErrorMessage(err) });
     }
 })
 .put(async (req, res) => {
