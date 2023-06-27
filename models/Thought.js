@@ -18,6 +18,10 @@ const thoughtSchema = new Schema({
         type: String,
         required: true
     }
+}, {
+    toJSON: {
+        versionKey: false
+    }
 });
 
 module.exports = thoughtSchema;
