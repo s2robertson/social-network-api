@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getThoughts } = require('../controllers/thoughts');
+const { getThoughts, getThoughtById } = require('../controllers/thoughts');
 const getErrorMessage = require('../util/errorMessage');
 
 router.route('/')
@@ -9,6 +9,21 @@ router.route('/')
     try {
         const thoughts = await getThoughts();
         res.json(thoughts);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: getErrorMessage(err) });
+    }
+})
+
+router.route('/:id')
+.get(async (req, res) => {
+    try {
+        const thought = await getThoughtById(req.params.id);
+        if (thought) {
+            res.json(thought);
+        } else {
+            res.status(404).json({ message: `Invalid Thought Id (${req.params.id})` });
+        }
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: getErrorMessage(err) });
