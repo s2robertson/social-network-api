@@ -24,5 +24,14 @@ module.exports = {
         return Thought.findByIdAndUpdate(id, { thoughtText }, { new: true })
             .select('-__v')
             .lean();
+    },
+
+    async deleteThought(id) {
+        const thought = await Thought.findByIdAndDelete(id, { new: true });
+        if (thought) {
+            await User.updateOne({ username: thought.username },
+                { $pull: { thoughts: thought.id } });
+        }
+        return thought;
     }
 }
