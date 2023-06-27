@@ -10,6 +10,7 @@ module.exports = {
     getUserById(id) {
         return User.findById(id)
             .select('-__v')
+            .populate('thoughts', '-__v')
             .populate('friends', '-__v')
             .lean();
     },

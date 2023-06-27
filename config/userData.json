@@ -2,15 +2,18 @@
     "_id": "649a012ca2baa7727c51c2ab",
     "username": "john.doe",
     "email": "john.doe@example.com",
+    "thoughts": ["649a4847359cd8193449d7da", "649a4847359cd8193449d7db"],
     "friends": ["649a012ca2baa7727c51c2ac", "649a012ca2baa7727c51c2ad"]
 }, {
     "_id": "649a012ca2baa7727c51c2ac",
     "username": "fred.griffon",
     "email": "fgriffon@example.com",
+    "thoughts": ["649a4847359cd8193449d7dc", "649a4847359cd8193449d7dd"],
     "friends": ["649a012ca2baa7727c51c2ab"]
 }, {
     "_id": "649a012ca2baa7727c51c2ad",
     "username": "greg.smith",
     "email": "gsmith@example.com",
+    "thoughts": ["649a4847359cd8193449d7de", "649a4847359cd8193449d7df"],
     "friends": ["649a012ca2baa7727c51c2ab"]
 }]
