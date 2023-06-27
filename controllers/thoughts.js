@@ -18,5 +18,11 @@ module.exports = {
         await User.updateOne({ username: thoughtData.username },
             { $addToSet: { thoughts: thought.id } });
         return thought
+    },
+
+    updateThought(id, thoughtText) {
+        return Thought.findByIdAndUpdate(id, { thoughtText }, { new: true })
+            .select('-__v')
+            .lean();
     }
 }
