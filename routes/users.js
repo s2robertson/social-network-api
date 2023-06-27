@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const { getUsers, getUserById } = require('../controllers/users');
+const { getUsers, getUserById, createUser } = require('../controllers/users');
+const getErrorMessage = require('../util/errorMessage');
 
 router.route('/')
 .get(async (req, res) => {
@@ -11,6 +12,15 @@ router.route('/')
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: 'Something went wrong!' });
+    }
+})
+.post(async (req, res) => {
+    try {
+        const user = await createUser(req.body);
+        res.status(201).json(user);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: getErrorMessage(err) });
     }
 })
 
