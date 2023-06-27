@@ -22,5 +22,11 @@ module.exports = {
         return User.findByIdAndUpdate(id, newUserData, { new: true })
             .select('-__v')
             .lean();
+    },
+
+    addFriend(userId, friendId) {
+        return User.findByIdAndUpdate(userId, { $addToSet: { friends: friendId } }, { new: true })
+            .select('-__v')
+            .lean();
     }
 }
