@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Thought } = require('../models');
 
 module.exports = {
     getUsers() {
@@ -23,6 +23,14 @@ module.exports = {
         return User.findByIdAndUpdate(id, newUserData, { new: true })
             .select('-__v')
             .lean();
+    },
+
+    async deleteUser(id) {
+        const user = await User.findByIdAndDelete(id);
+        if (user) {
+            await Thought.deleteMany({ username: user.username });
+        }
+        return user;
     },
 
     addFriend(userId, friendId) {

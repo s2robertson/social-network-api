@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getUsers, getUserById, createUser, updateUser, addFriend, removeFriend } = require('../controllers/users');
+const { getUsers, getUserById, createUser, updateUser, deleteUser, addFriend, removeFriend } = require('../controllers/users');
 const getErrorMessage = require('../util/errorMessage');
 
 router.route('/')
@@ -41,6 +41,19 @@ router.route('/:id')
 .put(async (req, res) => {
     try {
         const user = await updateUser(req.params.id, req.body);
+        if (user) {
+            res.json(user);
+        } else {
+            res.status(404).json({ message: `Invalid User Id (${req.params.id})` });
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: getErrorMessage(err) });
+    }
+})
+.delete(async (req, res) => {
+    try {
+        const user = await deleteUser(req.params.id);
         if (user) {
             res.json(user);
         } else {
