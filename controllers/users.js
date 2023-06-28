@@ -2,17 +2,13 @@ const { User, Thought } = require('../models');
 
 module.exports = {
     getUsers() {
-        return User.find()
-            .select('-__v')
-            .lean();
+        return User.find();
     },
 
     getUserById(id) {
         return User.findById(id)
-            .select('-__v')
-            .populate('thoughts', '-__v')
-            .populate('friends', '-__v')
-            .lean();
+            .populate('thoughts')
+            .populate('friends');
     },
 
     createUser(userData) {
@@ -45,14 +41,14 @@ module.exports = {
     },
 
     addFriend(userId, friendId) {
-        return User.findByIdAndUpdate(userId, { $addToSet: { friends: friendId } }, { new: true })
-            .select('-__v')
-            .lean();
+        return User.findByIdAndUpdate(userId,
+            { $addToSet: { friends: friendId } },
+            { new: true });
     },
 
     removeFriend(userId, friendId) {
-        return User.findByIdAndUpdate(userId, { $pull: { friends: friendId } }, { new: true })
-            .select('-__v')
-            .lean();
+        return User.findByIdAndUpdate(userId,
+            { $pull: { friends: friendId } },
+            { new: true });
     }
 }

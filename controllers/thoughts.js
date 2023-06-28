@@ -2,15 +2,11 @@ const { Thought, User } = require('../models');
 
 module.exports = {
     getThoughts() {
-        return Thought.find()
-            .select('-__v')
-            .lean();
+        return Thought.find();
     },
 
     getThoughtById(id) {
-        return Thought.findById(id)
-            .select('-__v')
-            .lean();
+        return Thought.findById(id);
     },
 
     async createThought(thoughtData) {
@@ -21,9 +17,7 @@ module.exports = {
     },
 
     updateThought(id, thoughtText) {
-        return Thought.findByIdAndUpdate(id, { thoughtText }, { new: true })
-            .select('-__v')
-            .lean();
+        return Thought.findByIdAndUpdate(id, { thoughtText }, { new: true });
     },
 
     async deleteThought(id) {
