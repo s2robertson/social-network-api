@@ -45,6 +45,13 @@ const thoughtSchema = new Schema({
     },
     reactions: [reactionSchema]
 }, {
+    virtuals: {
+        reactionCount: {
+            get() {
+                return this.reactions.length;
+            }
+        }
+    },
     toJSON: {
         versionKey: false
     }
