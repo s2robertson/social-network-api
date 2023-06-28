@@ -39,11 +39,15 @@ Reactions have the following fields:
 The following paths can be used to interact with Thoughts and Reactions:
 * `/api/thoughts` (`GET` returns all thoughts, `POST` creates a thought)
 * `/api/thoughts/:thoughtId` (`GET`, `PUT`, and `DELETE` data for a particular thought)
-* `/api/thoughts/:thoughtId/reactions` (`POST` adds a new reaction, `DELETE` removes one)
+* `/api/thoughts/:thoughtId/reactions` (`POST` adds a new reaction)
+* `/api/thoughts/:thoughtId/reactions/:reactionId` (`DELETE` removes a reaction)
 
 When creating a Thought, if a valid `username` is provided, the Thought's `_id` will be added to the User's `thoughts` array.  If a User's
 `username` is updated, that change will be propagated to all Thoughts in their `thoughts` array, but not to Reactions.  Deleting a User also 
 deletes all of their Thoughts.
+
+## Demo Video
+[Watch a demo of the app](https://drive.google.com/file/d/1NkZl3W2JA2RR9P8x-0jm5tHs8Q9G4UCJ/view)
 
 ## Credits
 The email validation regex was taken from [the HTML spec](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address).
