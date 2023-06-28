@@ -35,7 +35,7 @@ module.exports = {
     async deleteUser(id) {
         const user = await User.findByIdAndDelete(id);
         if (user) {
-            await Thought.deleteMany({ username: user.username });
+            await Thought.deleteMany({ _id: { $in: user.thoughts } });
         }
         return user;
     },
