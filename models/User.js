@@ -22,6 +22,13 @@ const userSchema = new Schema({
         ref: 'user'
     }]
 }, {
+    virtuals: {
+        friendCount: {
+            get() {
+                return this.friends.length;
+            }
+        }
+    },
     toJSON: {
         versionKey: false
     }
