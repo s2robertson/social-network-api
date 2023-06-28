@@ -19,10 +19,21 @@ module.exports = {
         return User.create(userData);
     },
 
-    updateUser(id, newUserData) {
-        return User.findByIdAndUpdate(id, newUserData, { new: true })
-            .select('-__v')
-            .lean();
+    async updateUser(id, newUserData) {
+        const user = await User.findById(id);
+        if (newUserData.username) {
+            user.username = newUserData.username;
+        }
+        if (newUserData.email) {
+            user.email = newUserData.email;
+        }
+        const usernameModified = user.isModified('username');
+        await user.save();
+        if (usernameModified) {
+            await Thought.updateMany({ _id: { $in: user.thoughts } },
+                { $set: { username: newUserData.username }});
+        }
+        return user;
     },
 
     async deleteUser(id) {
