@@ -3,6 +3,7 @@
     "thoughtText": "egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris",
     "username": "john.doe",
     "reactions": [{
+        "reactionId": "649b3e0d68bfbbf5d45e2f39",
         "reactionBody": "nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus",
         "username": "fred.griffon"
     }]
@@ -11,6 +12,7 @@
     "thoughtText": "varius duis at consectetur lorem donec massa sapien faucibus et molestie ac feugiat sed lectus",
     "username": "john.doe",
     "reactions": [{
+        "reactionId": "649b3e0d68bfbbf5d45e2f3b",
         "reactionBody": "risus viverra adipiscing at in tellus integer feugiat scelerisque varius",
         "username": "greg.smith"
     }]
@@ -19,6 +21,7 @@
     "thoughtText": "donec massa sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed",
     "username": "fred.griffon",
     "reactions": [{
+        "reactionId": "649b3e0d68bfbbf5d45e2f3d",
         "reactionBody": "faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget",
         "username": "john.doe"
     }]
@@ -27,9 +30,11 @@
     "thoughtText": "volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis",
     "username": "fred.griffon",
     "reactions": [{
+        "reactionId": "649b3e0d68bfbbf5d45e2f3f",
         "reactionBody": "congue quisque egestas diam in arcu cursus euismod quis viverra",
         "username": "john.doe"
     }, {
+        "reactionId": "649b3e0d68bfbbf5d45e2f40",
         "reactionBody": "mi sit amet mauris commodo quis imperdiet massa tincidunt nunc",
         "username": "greg.smith"
     }]
@@ -38,6 +43,7 @@
     "thoughtText": "egestas maecenas pharetra convallis posuere morbi leo urna molestie at elementum eu facilisis sed odio",
     "username": "greg.smith",
     "reactions": [{
+        "reactionId": "649b3e0d68bfbbf5d45e2f42",
         "reactionBody": "dignissim convallis aenean et tortor at risus viverra adipiscing at",
         "username": "john.doe"
     }]
@@ -46,6 +52,7 @@
     "thoughtText": "fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque",
     "username": "greg.smith",
     "reactions": [{
+        "reactionId": "649b3e0d68bfbbf5d45e2f44",
         "reactionBody": "amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien",
         "username": "fred.griffon"
     }]
